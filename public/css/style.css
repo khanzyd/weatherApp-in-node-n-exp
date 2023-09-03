@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+body a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper{
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 0rem 8rem;
+}
+
+.wrapper .main-cont{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper hr{
+    margin-top: -0.8rem;
+}
+
+.wrapper .navbar #logo{
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.wrapper .navbar #ham-menu{
+    display: none;
+}
+
+.wrapper .navbar #nav-menu{
+    list-style: none;
+    margin-bottom: 0rem!important;
+}
+
+.wrapper .navbar #nav-menu .nav-item{
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 3rem;
+}
+
+.wrapper .navbar #nav-menu .nav-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.wrapper .main-page-desc #main-page-text{
+    font-size: 3.5vw;
+    font-weight: 700;
+    padding: 8rem 3rem 5rem 0 ;
+}
+
+.wrapper .main-page-desc #main-page-text #redirect-forecast-btn{
+    border: 1px solid black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.wrapper .main-page-desc #main-page-text #redirect-forecast-btn a{
+    color: #000;
+}
+
+.wrapper .main-page-desc #main-page-text #redirect-forecast-btn i{
+    padding-left: .6rem;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.wrapper .main-page-carausol img{
+    height: 300px;
+    object-fit: contain;
+}
+
+.wrapper .cards-main-container{
+    width: 100%;
+    overflow-x: scroll; 
+}
+
+.wrapper .cards-main-container .helper{
+    display: inline-flex;
+    overflow-x: scroll;
+    padding: 3rem 0rem;
+}
+
+.wrapper .cards-main-container .helper::-webkit-scrollbar{
+    display: none;
+}
+
+.cards-main-container .helper .main-card{
+    position: relative;
+    width: 20rem;
+    height: 32rem;
+
+    color: rgb(236, 236, 236);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-right: 8rem;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.915);
+}
+
+.cards-main-container .helper .main-card img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    z-index: 0;
+    transition: scale cubic-bezier(0.19, 1, 0.22, 1) 1.3s;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.cards-main-container .helper .main-card:hover img{
+    scale: 1.3;
+}
+
+.cards-main-container .helper .main-card .card-inside{
+    position: relative;
+    z-index: 3;
+
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.cards-main-container .helper .main-card .card-desc .card-text{
+    font-size: 1.5rem;
+}
+
+.cards-main-container .helper .main-card .card-desc .card-temp{
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.cards-main-container .helper .main-card .card-desc .card-partition{
+    font-size: 4rem;
+    font-weight: 500;
+    padding: 0 0.5rem;
+}
+
+.cards-main-container .helper .main-card .card-desc i{
+    font-size: 2rem;
+}
+
+.cards-main-container .helper .main-card .card-desc .card-tittle{
+    font-size: 2rem;
+}
+
+.cards-main-container .helper .main-card .card-inside .card-ltn{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.cards-main-container .helper .main-card .card-inside .card-ltn i{
+    font-size: 2rem;
+    padding-right: 1rem;
+}
+
+.main-cont .footer-cont{
+    margin-top: auto;
+}
+
+.wrapper footer ul li {
+    font-size: 1.5rem;
+}
+
+@media  screen and (max-width: 1024px) {
+
+    .wrapper{
+        padding: 0 5rem;
+    }
+
+    .wrapper .main-page-carausol img{
+        height: 200px;
+    }
+
+    .cards-main-container .helper .main-card{
+        width: 18rem;
+        height: 26rem;
+
+        margin-right: 5rem;
+        border-radius: 1rem;
+    }
+
+    .cards-main-container .helper .main-card .card-desc i{
+        font-size: 1.7rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-desc .card-tittle{
+        font-size: 1.8rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn{
+        font-size: 1.5rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn i{
+        font-size: 1.8rem;
+        padding-right: 1rem;
+    }
+
+}
+
+@media  screen and (max-width: 768px) {
+
+    .wrapper{
+        padding: 0 3rem;
+    }
+
+    .wrapper .navbar #logo{
+        font-size: 2.7rem;
+    }
+    
+    .wrapper .navbar #nav-menu .nav-item{
+        font-size: 1.7rem;
+        margin-left: 3rem;
+    }
+    
+    .wrapper .main-page-carausol img{
+        margin: 3rem 0rem;
+    }
+
+    .wrapper .main-page-desc #main-page-text{
+        font-size: 9vw;
+        font-weight: 700;
+        padding: 0rem 3rem 3rem 0 ;
+    }
+
+    .cards-main-container .helper .main-card{
+        width: 15rem;
+        height: 22rem;
+
+        margin-right: 4rem;
+        border-radius: 1rem;
+    }
+
+    .cards-main-container .helper .main-card .card-desc .card-temp{
+        font-size: 2.1rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-desc .card-partition{
+        font-size: 3.4rem;
+    }
+
+    .cards-main-container .helper .main-card .card-desc i{
+        font-size: 1.5rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-desc .card-tittle{
+        font-size: 1.5rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn{
+        font-size: 1.4rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn i{
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .wrapper .navbar #nav-menu .nav-item{
+        display: none;
+    }
+
+    .wrapper .navbar #ham-menu{
+        display: block;
+        font-size: 2rem;
+        font-weight: 600;
+        transform: rotate(90deg);
+    }
+
+    .cards-main-container .helper .main-card{
+        width: 14rem;
+        height: 21rem;
+
+        margin-right: 3.3rem;
+        border-radius: 1rem;
+    }
+
+    .cards-main-container .helper .main-card .card-desc .card-temp{
+        font-size: 2.1rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-desc .card-partition{
+        font-size: 3.2rem;
+    }
+
+    .cards-main-container .helper .main-card .card-desc i{
+        font-size: 1.4rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-desc .card-tittle{
+        font-size: 1.4rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn{
+        font-size: 1.2rem;
+    }
+    
+    .cards-main-container .helper .main-card .card-inside .card-ltn i{
+        font-size: 1.5rem;
+    }
+}
+
+
+/*   code for Forecast page    */
+
+/* .main-cont .pg-content{
+
+} */
+
+.main-cont #forecast-form{
+    position: relative;
+    margin: 4rem auto;
+    width: 500px;
+    --fontsiz: 1.4rem;
+    --fontwght: 700;
+}
+
+.main-cont #form-ltn{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: var(--fontsiz);
+    font-weight: var(--fontwght);
+    border: none;
+    outline: none;
+    letter-spacing: 1.5px;
+    border-radius: 10rem;
+    background-color: #e1e1e1;
+    color: #212121;
+    /* padding-right: ; */
+}
+
+.main-cont #form-submit{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    font-size: var(--fontsiz);
+    font-weight: var(--fontwght);
+    border-radius: 10rem;
+    height: 100%;
+    padding: 1rem 2rem;
+    background-color: #053B50;
+    color: #d6d6d6;
+}
+
+.main-cont .pg-content .weather-card{
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    max-width: 500px;
+    height: 650px;
+    padding: 5rem 3rem;
+    margin: auto;
+    border-radius: 3rem;
+    color: #e9e9e9;
+}
+
+.main-cont .pg-content .weather-card #card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000e4;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+.main-cont .pg-content .weather-card #card-background video{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.main-cont .pg-content .weather-card #cloud-1{
+    position: absolute;
+    z-index: 6;
+    height: 90%;
+    width: 120%;
+
+    bottom: -55%;
+    left: -5%;
+
+    border-radius: 50%;
+    background-color: rgba(231, 231, 231, 0.789);
+    /* animation-name: rev; */
+    animation: rev 4s linear 1s infinite;
+}
+
+.main-cont .pg-content .weather-card #cloud-2{
+    position: absolute;
+    z-index: 7;
+    height: 90%;
+    width: 120%;
+
+    bottom: -55%;
+    left: -10%;
+
+    border-radius: 50%;
+    background-color: rgba(242, 242, 242, 0.875);
+    animation: rev 8s linear 2s infinite;
+}
+
+.main-cont .pg-content .weather-card #cloud-3{
+    position: absolute;
+    z-index: 6;
+    height: 90%;
+    width: 120%;
+
+    bottom: -55%;
+    right: -5%;
+
+    border-radius: 50%;
+    background-color: rgba(226, 226, 226, 0.777);
+    /* animation-name: rev; */
+    animation: rev 6s linear 1s infinite;
+}
+
+.weather-card .location {
+    position: relative;
+    z-index: 8;
+}
+
+.weather-card .location #card-location{
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.weather-card .location #card-location i{
+    padding-right: 1rem;
+    font-size: 4rem;
+}
+
+.weather-card .location #card-date-n-time{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+.weather-card .card-forecast{
+    position: relative;
+    margin: 7rem 0;
+    z-index: 8;
+}
+
+.weather-card .card-forecast i{
+    font-size: 10rem;
+    margin-bottom: 2rem;
+}
+.weather-card .card-forecast h3{
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.weather-card .card-temp-info{
+    position: absolute;
+    z-index: 8;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: #1f1f1f;
+}
+
+.weather-card .card-temp-info #city-temp{
+    font-size: 6rem;
+    font-weight: 800;
+}
+
+.weather-card .card-temp-info .min-max  h2 {
+    font-size: 6rem;
+    padding: 0 2rem;
+}
+
+.weather-card .card-temp-info .min-max #min-info > h3 , .weather-card .card-temp-info .min-max #max-info > h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.weather-card .card-temp-info .min-max #min-info > h5 , .weather-card .card-temp-info .min-max #max-info > h5{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+@keyframes rev {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media  screen and (max-width: 768px) {
+    .main-cont #forecast-form{
+        width: 400px;
+    }
+
+    .main-cont .pg-content .weather-card{
+        width: 400px;
+        height: 550px;
+        padding: 4rem 2rem;
+    }
+    
+    .weather-card .location #card-location{
+        font-size: 3rem;
+    }
+
+    .weather-card .location #card-date-n-time{
+        font-size: 1.2rem;
+    }
+
+    .weather-card .card-forecast{
+        margin: 3rem;
+    }
+
+    .weather-card .card-temp-info{
+        bottom: 3%;
+    }
+
+}
+
+@media  screen and (max-width: 550px){
+    .main-cont #forecast-form{
+        width: 350px;
+    }
+    
+    .main-cont .pg-content .weather-card{
+        width: 350px;
+        height: 500px;
+        padding: 3rem 1.5rem;
+    }
+    
+    .weather-card .location #card-location{
+        font-size: 2.5rem;
+    }
+
+    .weather-card .location #card-location i{
+        font-size: 3rem;
+    }
+
+    .weather-card .location #card-date-n-time{
+        font-size: 1.2rem;
+    }
+
+    .weather-card .card-temp-info{
+        bottom: 1%;
+    }
+        
+    .weather-card .card-temp-info #city-temp{
+        font-size: 5rem;
+    }
+
+    .weather-card .card-temp-info .min-max  h2 {
+        font-size: 5rem;
+        padding: 0 1.5rem;
+    }
+
+    .weather-card .card-temp-info .min-max #min-info > h3 , .weather-card .card-temp-info .min-max #max-info > h3 {
+        font-size: 2.5rem;
+    }
+
+    .weather-card .card-temp-info .min-max #min-info > h5 , .weather-card .card-temp-info .min-max #max-info > h5{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media  screen and (max-width: 450px){
+    .main-cont #forecast-form{
+        width: 270px;
+    }
+    
+    .main-cont .pg-content .weather-card{
+        width: 270px;
+        height: 450px;
+        padding: 3rem 1rem;
+    }
+    
+    .weather-card .card-temp-info{
+        bottom: 2%;
+    }
+    
+    .weather-card .card-forecast i{
+        font-size: 7rem;
+        margin-bottom: 2rem;
+    }
+    .weather-card .card-forecast h3{
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    
+.main-cont .pg-content .weather-card #cloud-1{
+    height: 60%;
+    width: 90%;
+
+    bottom: -27%;
+    left: -5%;
+}
+
+.main-cont .pg-content .weather-card #cloud-2{
+    height: 65%;
+    width: 100%;
+
+    bottom: -30%;
+    left: 1%;
+}
+
+.main-cont .pg-content .weather-card #cloud-3{
+    height: 55%;
+    width: 100%;
+
+    bottom: -27%;
+    right: -8%;
+}
+
+}
