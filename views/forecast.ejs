@@ -2,9 +2,9 @@
 
     <div class="row justify-content-center">
         <div class="pg-content col-xl-7 col-md-11 text-center" >
-            <form id="forecast-form" action="/forecast" method="get">
-                <input  id="form-ltn" type="text" name="form-ltn" placeholder="Enter Location">
-                <input id="form-submit" class="btn " type="submit" value="submit">
+            <form id="forecast-form" action="/forecast" method="POST">
+                <input  id="form-ltn" type="text" name="formLtn" placeholder="Enter Location" >
+                <input id="form-submit" class="btn " type="submit" value="submit" >
             </form>
             <div class="weather-card " >
                 <div class="" id="cloud-1"></div>
@@ -12,26 +12,26 @@
                 <div class="" id="cloud-3"></div>
                 <div id="card-background"><video muted autoplay loop src="images/Sunny background.mp4"></video></div>
                 <div class="location">
-                    <h3 id="card-location"><i class="fa-solid fa-location-dot"></i>Mumbai, IN</h3>
+                    <h3 id="card-location"><i class="fa-solid fa-location-dot"></i> <%= cityName %></h3>
                     <h5 id="card-date-n-time">wed | Sep 2 | 11:10 PM</h5>
                 </div>
                 
                 <div class="card-forecast">
                     <i class="fa-solid fa-sun" style="color: #f0d000;"></i>
-                    <h3 id="temp-desc">Sunny</h3>
+                    <h3 id="temp-desc"><%= cityDesc %></h3>
                 </div>
 
                 <div class="card-temp-info">
-                    <h2 id="city-temp">27 &deg;C</h2>
+                    <h2 id="city-temp"><%= cityTemp %> &deg;C</h2>
                     <div class="min-max d-flex justify-content-center align-items-center">
                         <div id="min-info">
                             <h3>min</h3>
-                            <h5>20 &deg;C</h5>
+                            <h5><%= cityMinTemp %> &deg;C</h5>
                         </div>
                         <h2>|</h2>
                         <div id="max-info">
                             <h3>max</h3>
-                            <h5>37 &deg;C</h5>
+                            <h5><%= cityMaxTemp %> &deg;C</h5>
                         </div>
                     </div>
                 </div>
