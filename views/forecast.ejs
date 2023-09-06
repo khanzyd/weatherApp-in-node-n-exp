@@ -10,14 +10,15 @@
                 <div class="" id="cloud-1"></div>
                 <div class="" id="cloud-2"></div>
                 <div class="" id="cloud-3"></div>
-                <div id="card-background"><video muted autoplay loop src="images/Sunny background.mp4"></video></div>
+                <div id="card-background"><video muted autoplay loop src= "<%= backgroundSet %>" ></video></div>
                 <div class="location">
-                    <h3 id="card-location"><i class="fa-solid fa-location-dot"></i> <%= cityName %></h3>
+                    <h3 id="card-location"><i class="fa-solid fa-location-dot" ></i> <%= cityName %></h3>
                     <h5 id="card-date-n-time">wed | Sep 2 | 11:10 PM</h5>
                 </div>
                 
                 <div class="card-forecast">
-                    <i class="fa-solid fa-sun" style="color: #f0d000;"></i>
+                    <i class="<%= icon %>"></i>
+                    
                     <h3 id="temp-desc"><%= cityDesc %></h3>
                 </div>
 

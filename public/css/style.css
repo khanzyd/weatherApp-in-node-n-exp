@@ -472,7 +472,12 @@ body a{
 .weather-card .card-forecast i{
     font-size: 10rem;
     margin-bottom: 2rem;
+    color: #d6d6d6;
 }
+.weather-card .card-forecast i.fa-sun{
+    color: #f0d000;
+}
+
 .weather-card .card-forecast h3{
     font-size: 4rem;
     font-weight: 700;
