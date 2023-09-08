@@ -1,7 +1,7 @@
 let data = {
     default : {
         background : "images/default background.webm",
-        icon : `fa-solid fa-sun`
+        icon : `fa-solid fa-volcano`
     },
 
     Clear : {

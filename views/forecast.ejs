@@ -7,13 +7,13 @@
                 <input id="form-submit" class="btn " type="submit" value="submit" >
             </form>
             <div class="weather-card " >
-                <div class="" id="cloud-1"></div>
-                <div class="" id="cloud-2"></div>
-                <div class="" id="cloud-3"></div>
+                <div id="cloud-1"></div>
+                <div id="cloud-2"></div>
+                <div id="cloud-3"></div>
                 <div id="card-background"><video muted autoplay loop src= "<%= backgroundSet %>" ></video></div>
                 <div class="location">
                     <h3 id="card-location"><i class="fa-solid fa-location-dot" ></i> <%= cityName %></h3>
-                    <h5 id="card-date-n-time">wed | Sep 2 | 11:10 PM</h5>
+                    <h5 class="d-flex align-items-center justify-content-center" id="card-date-n-time">wed <span>|</span> Sep 2 <span>|</span> 11:10 PM</h5>
                 </div>
                 
                 <div class="card-forecast">
@@ -44,3 +44,29 @@
     </div>
 
 <%- include('./partials/footer.ejs') %>
+
+<script>
+
+    let date_time = document.querySelector("#card-date-n-time");
+    // "wed | Sep 2 | 11:10 PM"
+    let days = ["SUN" , "MON" , "TUE" , "WED" , "THURS" , "FRI" , "SAT"];
+    let months = ["JAN" , "FEB" , "MAR" , "APR" , "MAY" , "JUN" , "JUL" , "AUG" , "SEP" , "OCT" , "NOV" , "DEC"];
+
+    let time = new Date();
+    let day = days[time.getDay()];
+    let month = months[time.getMonth()];
+    let current_time = time.getHours();
+    let meridian = "AM";
+    if(current_time > 12 ){
+        current_time = current_time - 12;
+        meridian = "PM";
+    } else {
+        meridian = "AM";
+    }
+
+    date_time.innerHTML = `${day}  <span>|</span>  ${month} ${time.getDate()}  <span>|</span>  ${current_time}:${time.getMinutes()} ${meridian}`;
+    
+</script>
+
+</body>
+</html>

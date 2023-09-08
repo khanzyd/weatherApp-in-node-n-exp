@@ -45,8 +45,6 @@ app.post("/forecast", async (req,res)=>{
 
     let data = await fetch(url);
     let obj = await data.json();
-    console.log(obj)
-    console.log(obj.weather[0].main)
 
     city_Name = `${obj.name}, ${obj.sys.country}` ;
     let city_Desc = obj.weather[0].main ;

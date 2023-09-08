@@ -17,7 +17,80 @@
 </div>
 
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<script>
+    let menu_btn = document.querySelector("#ham-menu");
+    let nav_endline = document.querySelector("#header-end")
+    let navMenu_Container = document.querySelector("#nav-container");
+    let htmlcontent = navMenu_Container.innerHTML;
+    let madeHam = false;
+    let madeNav = false;
+
+    // functions 
+
+    let changeToHamMenu = () => {
+        menu_btn.style.display = "block";
+        if(!madeHam){
+            // navMenu_Container.remove() <- not working but below code is working
+            document.querySelector("#nav-menu").parentElement.remove();
+
+            let new_navlist = document.createElement("div");
+            new_navlist.classList.add("row","new_nav")
+            new_navlist.innerHTML = htmlcontent;
+            nav_endline.insertAdjacentElement("afterend",new_navlist);
+
+            madeHam = true;
+        }
+    }
+
+    let changeToNavbar = () => {
+        if(!madeNav){
+            let nav = document.createElement("div");
+            nav.classList.add("col-6")
+            nav.setAttribute("id","nav-container");
+            nav.innerHTML = htmlcontent;
+            let ham = document.querySelector("#ham-menu")
+            ham.insertAdjacentElement("beforebegin",nav);
+
+            madeNav = true;
+        }
+        document.querySelector("#nav-container").style.display = "block";
+
+    }
+
+    menu_btn.addEventListener("click", ()=>{
+        let new_nav = document.querySelector(".new_nav");
+        console.log(new_nav.style.height)
+        if(new_nav.style.height == "auto"){
+            new_nav.style.height = 0;
+        } else{
+            new_nav.style.height = "auto";
+        } 
+    })
+
+    if(window.screen.width < 500){
+        changeToHamMenu()
+        menu_btn.style.display = "block";
+    } else {
+        madeNav = true;
+    }
+
+    window.addEventListener("resize", ()=>{
+        if(screen.width < 500){
+            changeToHamMenu();
+            madeNav = false;
+        } else {
+            changeToNavbar();
+            menu_btn.style.display = "none";
+
+            if(document.querySelector(".new_nav")){
+                // let new_nav = ;
+                document.querySelector(".new_nav").remove();
+            }
+
+            madeHam = false;
+        }
+    })
+
+</script>
