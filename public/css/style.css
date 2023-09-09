@@ -46,6 +46,10 @@ body a{
     display: none;
 }
 
+.wrapper .navbar #nav-container{
+    display: none;
+}
+
 .wrapper .navbar #nav-menu{
     list-style: none;
     margin-bottom: 0rem!important;
@@ -68,16 +72,17 @@ body a{
     font-size: 3.5vw;
     font-weight: 700;
     padding: 8rem 3rem 5rem 0 ;
+    color: #053B50;
 }
 
 .wrapper .main-page-desc #main-page-text #redirect-forecast-btn{
-    border: 1px solid black;
+    border: 1px solid #053B50;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .wrapper .main-page-desc #main-page-text #redirect-forecast-btn a{
-    color: #000;
+    color: #053B50;
 }
 
 .wrapper .main-page-desc #main-page-text #redirect-forecast-btn i{
@@ -94,6 +99,7 @@ body a{
 .wrapper .cards-main-container{
     width: 100%;
     overflow-x: scroll; 
+    margin-top: auto;
 }
 
 .wrapper .cards-main-container .helper{
@@ -160,6 +166,23 @@ body a{
 
 .cards-main-container .helper .main-card .card-desc i{
     font-size: 2rem;
+    color: #d3d3d3;
+}
+
+.cards-main-container .helper .main-card .card-desc i.fa-sun{
+    color: #d2b705;
+}
+
+.cards-main-container .helper .main-card .card-desc i.fa-smog{
+    color: #9c9c9c;
+}
+
+.cards-main-container .helper .main-card .card-desc i.fa-snowflake{
+    color: #ffffff;
+}
+
+.cards-main-container .helper .main-card .card-desc i.fa-cloud-bolt{
+    color: #898989;
 }
 
 .cards-main-container .helper .main-card .card-desc .card-tittle{
@@ -287,7 +310,6 @@ body a{
     }
 
     .wrapper .new_nav #nav-menu{
-        /* display: flex; */
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -306,7 +328,6 @@ body a{
     }
 
     .wrapper .navbar #ham-menu{
-        /* display: block; */
         font-size: 2rem;
         font-weight: 600;
         transform: rotate(90deg);
@@ -345,13 +366,6 @@ body a{
     }
 }
 
-
-/*   code for Forecast page    */
-
-/* .main-cont .pg-content{
-
-} */
-
 .main-cont #forecast-form{
     position: relative;
     margin: 4rem auto;
@@ -371,7 +385,6 @@ body a{
     border-radius: 10rem;
     background-color: #e1e1e1;
     color: #212121;
-    /* padding-right: ; */
 }
 
 .main-cont #form-submit{
@@ -427,7 +440,6 @@ body a{
 
     border-radius: 50%;
     background-color: rgba(231, 231, 231, 0.789);
-    /* animation-name: rev; */
     animation: rev 4s linear 1s infinite;
 }
 
@@ -456,7 +468,6 @@ body a{
 
     border-radius: 50%;
     background-color: rgba(226, 226, 226, 0.777);
-    /* animation-name: rev; */
     animation: rev 6s linear 1s infinite;
 }
 
@@ -675,4 +686,21 @@ body a{
     right: -8%;
 }
 
+}
+
+
+/* About page style */
+
+.wrapper #about-heading{
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #053B50;
+}
+
+.wrapper #about-info{
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: justify;
 }

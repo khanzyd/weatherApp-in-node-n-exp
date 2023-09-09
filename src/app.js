@@ -10,7 +10,7 @@ const app = new express();
 // for api ID
 const ID = require("../appID");
 // for forecast
-const dataObject = require("../data");
+const {dataObject , card_Data} = require("../data");
 
 // path for public directory
 const static_Path = path.join(__dirname , "../public");
@@ -22,50 +22,83 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended : true}))
 
 app.get("/" , (req,res) => {
-    res.render("index");
+    res.render("index",
+    {
+        cardData : card_Data
+    });
 })
 
 app.get("/forecast" , (req,res) => {
     res.render("forecast",
     {
-        cityName : "Mumbai, IN",
-        cityDesc : "Sunny",
-        cityTemp : 27,
-        cityMinTemp : 23.4,
-        cityMaxTemp : 32.8 ,
+        cityName : "Enter Location",
+        cityDesc : "--",
+        cityTemp : "_",
+        cityMinTemp : null,
+        cityMaxTemp : null ,
         backgroundSet : "images/sunny background.mp4",
-        icon : `fa-solid fa-sun`
+        icon : `fa-solid fa-star fa-beat-fade`
     });
 })
 
 app.post("/forecast", async (req,res)=>{
     let city_Name = req.body.formLtn;
 
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city_Name}&units=metric&appid=${ID}`
+    if(city_Name == ""){
+        res.render("forecast",
+        {
+            cityName : "Please enter city name!",
+            cityDesc : "--",
+            cityTemp : "_",
+            cityMinTemp : null,
+            cityMaxTemp : null ,
+            backgroundSet : "",
+            icon : `fa-solid fa-face-frown fa-bounce`            
+        })
+    } else {
+        try{
+            let url = `http://api.openweathermap.org/data/2.5/weather?q=${city_Name}&units=metric&appid=${ID}`
 
-    let data = await fetch(url);
-    let obj = await data.json();
+            let data = await fetch(url);
+            let obj = await data.json();
 
-    city_Name = `${obj.name}, ${obj.sys.country}` ;
-    let city_Desc = obj.weather[0].main ;
-    let city_Temp = Math.floor(obj.main.temp) ;
-    let city_Mintemp = obj.main.temp_min ;
-    let city_Maxtemp = obj.main.temp_max ;
+            city_Name = `${obj.name}, ${obj.sys.country}` ;
+            let city_Desc = obj.weather[0].main ;
+            let city_Temp = Math.floor(obj.main.temp) ;
+            let city_Mintemp = obj.main.temp_min ;
+            let city_Maxtemp = obj.main.temp_max ;
 
-    let neededData = (dataObject[city_Desc]) ? dataObject[city_Desc] : dataObject.default ;
-    console.log(neededData)
+            let neededData = (dataObject[city_Desc]) ? dataObject[city_Desc] : dataObject.default ;
 
-    res.render("forecast" ,
-    {
-        cityName : city_Name,
-        cityDesc : city_Desc,
-        cityTemp : city_Temp,
-        cityMinTemp : city_Mintemp,
-        cityMaxTemp : city_Maxtemp ,
-        backgroundSet : neededData.background,
-        icon : neededData.icon
-    })
-    
+            res.render("forecast" ,
+            {
+                cityName : city_Name,
+                cityDesc : city_Desc,
+                cityTemp : city_Temp,
+                cityMinTemp : city_Mintemp,
+                cityMaxTemp : city_Maxtemp ,
+                backgroundSet : neededData.background,
+                icon : neededData.icon
+            })
+
+        } 
+        catch (err){
+            res.render("forecast" , 
+            {
+                cityName : "Enter correct city name",
+                cityDesc : "--",
+                cityTemp : "_",
+                cityMinTemp : null,
+                cityMaxTemp : null ,
+                backgroundSet : "",
+                icon : `fa-solid fa-face-frown fa-bounce`
+            })
+        }
+    }
+})
+
+app.get("/about",(req,res)=>{
+    res.render("about");
 })
 
 app.listen(port , () => {

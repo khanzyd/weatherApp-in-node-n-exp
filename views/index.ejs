@@ -28,160 +28,35 @@
 <!-- cards -->
 <div class="cards-main-container">
     <div class="helper">
-        <div class="main-card ">
-            <img src="images/sunny-road.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">38&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-sun fa-bounce " style="color: rgb(246, 183, 36);"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Sunny</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Tokyo, JP</h4>
-            </div>
-        </div>
-        
-        <div class="main-card ">
-            <img src="images/stormy-2.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">27&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-cloud-bolt fa-bounce" style="color: #a7a7a7;"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Stormy</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Beijing, CH</h4>
-            </div>
-        </div>
-        
-        <div class="main-card ">
-            <img src="images/mumbai-rain.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">22&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-cloud-showers-heavy fa-bounce" style="color: #ebebeb;"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Rainy</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Mumbai, IN</h4>
-            </div>
-        </div>
-        
-        <div class="main-card ">
-            <img src="images/foggy.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">16&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-smog fa-bounce" style="color: #ffffff;"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Foggy</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Kashmir, IN</h4>
-            </div>
-        </div>
 
-        <div class="main-card ">
-            <img src="images/snowy.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">2&deg;C</h5>
+        <% cardData.forEach((data) => { %>
+            <div class="main-card ">
+                <img src= <%= data.imgSrc %> alt= <%= data.imgAlt %> >
+                <div class="card-inside" >
+                    <div class="card-desc d-flex align-items-center">
+                        <div>
+                            <h5 class="card-text card-temp"> <%= data.temp %>&deg;C</h5>
+                        </div>
+                        <div>
+                            <h5  class="card-text card-partition">|</h5>
+                        </div>
+                        <div>
+                            <i class= "<%= data.icon %>"></i>
+                            <h5 class="card-tittle"> <%= data.tittle %> </h5>
+                        </div>
                     </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-snowflake fa-bounce" style="color: #fcfcfc;"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Snowy</h5>
-                    </div>
+                    
+                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i> <%= data.ltn %> </h4>
                 </div>
         
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Britain, EN</h4>
             </div>
-        </div> 
-        
-        <div class="main-card ">
-            <img src="images/pleasant.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">31&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-sun fa-bounce " style="color: rgb(246, 183, 36);"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">pleasant</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Norway</h4>
-            </div>
-        </div>
-        
-        <div class="main-card ">
-            <img src="images/sunny-road.jpg" class="" alt="tokyo">
-            <div class="card-inside" >
-                <div class="card-desc d-flex align-items-center">
-                    <div>
-                        <h5 class="card-text card-temp">38&deg;C</h5>
-                    </div>
-                    <div>
-                        <h5  class="card-text card-partition">|</h5>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-sun fa-bounce " style="color: rgb(246, 183, 36);"></i>
-                        <!-- <i class="fa-solid fa-cloud-rain fa-bounce"></i> -->
-                        <h5 class="card-tittle">Sunny</h5>
-                    </div>
-                </div>
-        
-                <h4 class="card-ltn"><i class="fa-solid fa-location-dot"></i>Tokyo, JP</h4>
-            </div>
-        </div>
-        
+        <% }) %>
         
     </div>   
 </div>
 
 
 <%- include('./partials/footer.ejs') %>
-
 
 </body>
 </html>
